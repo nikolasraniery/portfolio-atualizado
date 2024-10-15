@@ -1,6 +1,11 @@
-import { CaretDoubleDown } from "@phosphor-icons/react";
+import { CaretDoubleUp } from "@phosphor-icons/react";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Card } from "@/components/Cards/Card.tsx";
+import {
+  CardDescriptions,
+  CardsNames,
+} from "@/components/Cards/CardsConstants.ts";
 
 export function Projects() {
   const location = useLocation();
@@ -16,15 +21,55 @@ export function Projects() {
 
   return (
     <div
-      className=""
-      style={{ height: "100vh", backgroundColor: "#f0f0f0" }}
+      className="bg-base-gray-200 h-lvh w-full p-16 gap-3 flex flex-col items-center"
       id="projects"
     >
-      <h2>Seção 1</h2>
-      <p>Conteúdo da Seção 1</p>
-      <Link to="#home">
-        <button className="z-50">
-          <CaretDoubleDown className="bg-main-red" size={32} />
+      <div className="flex flex-1 flex-col items-center w-full h-full">
+        <span className="font-inconsolata text-subtitle text-main-red">
+          Meu trabalho
+        </span>
+        <strong className="font-asap text-title-md text-base-gray-600">
+          Veja os projetos em destaque
+        </strong>
+      </div>
+      <div className="w-full h-full grid grid-cols-3">
+        <Card
+          cardImage="src/assets/Thumbnail_Project-01.png"
+          projectName={CardsNames.TRAVELGRAM}
+          projectDescription={CardDescriptions.TRAVELGRAM_DESCRIPTION}
+        />
+        <Card
+          cardImage="src/assets/Thumbnail_Project-02.png"
+          projectName={CardsNames.TECH_NEWS}
+          projectDescription={CardDescriptions.TECH_NEWS_DESCRIPTION}
+        />
+        <Card
+          cardImage="src/assets/Thumbnail_Project-03.png"
+          projectName={CardsNames.RECIPES_PAGE}
+          projectDescription={CardDescriptions.RECIPES_PAGE_DESCRIPTION}
+        />
+        <Card
+          cardImage="src/assets/Thumbnail_Project-04.png"
+          projectName={CardsNames.ZINGEN_PAGE}
+          projectDescription={CardDescriptions.ZINGEN_PAGE_DESCRIPTION}
+        />
+        <Card
+          cardImage="src/assets/Thumbnail_Project-05.png"
+          projectName={CardsNames.REFUND}
+          projectDescription={CardDescriptions.REFUND_DESCRIPTION}
+        />
+        <Card
+          cardImage="src/assets/Thumbnail_Project-06.png"
+          projectName={CardsNames.TURISM_PAGE}
+          projectDescription={CardDescriptions.TURISM_PAGE_DESCRIPTION}
+        />
+      </div>
+      <Link
+        className="h-full w-full absolute flex items-end justify-end"
+        to="#home"
+      >
+        <button className="mr-8 mb-8" title="Retornar ao topo">
+          <CaretDoubleUp className="text-base-gray-400" size={32} />
         </button>
       </Link>
     </div>
